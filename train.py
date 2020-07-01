@@ -82,7 +82,7 @@ def main():
         print("=> Start from the scratch ")
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    model = nn.DataParallel(model)
+    # model = nn.DataParallel(model)
     model.to(device)
 
     criterion1 = nn.MSELoss()
