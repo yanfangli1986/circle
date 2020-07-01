@@ -35,7 +35,7 @@ def find_circle(img):
     # Fill in this function
     model = Model()
     # checkpoint = torch.load('model.pth.tar', map_location=lambda storage, loc: storage)
-    checkpoint = torch.load('model.pth.tar')
+    checkpoint = torch.load('50_epoch_v8_checkpoint.pth.tar')
     model.load_state_dict(checkpoint)
     model.eval()
 
