@@ -34,6 +34,7 @@ def noisy_circle(size, radius, noise):
 def find_circle(img):
     # Fill in this function
     model = Model()
+    # checkpoint = torch.load('model.pth.tar', map_location=lambda storage, loc: storage)
     checkpoint = torch.load('model.pth.tar')
     model.load_state_dict(checkpoint)
     model.eval()

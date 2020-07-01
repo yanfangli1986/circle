@@ -137,7 +137,7 @@ def train(train_loader, model, criterion1, criterion2, optimizer, epoch, args, d
             running_loss = 0.0
 
         if epoch % args.save_freq == 0:
-            torch.save(model.module.state_dict(),
+            torch.save(model.state_dict(),
                        './' + str(epoch) + '_epoch_' + args.name + '_checkpoint.pth.tar')
 
 
