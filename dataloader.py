@@ -30,7 +30,7 @@ def noisy_circle(size, radius, noise):
 
 
 def train_set():
-    number_of_images = 20000
+    number_of_images = 200000
     level_of_noise = 3.5
     with open("train_set.csv", 'w', newline='') as outFile:
         header = ['NAME', 'ROW', 'COL', 'RAD']
