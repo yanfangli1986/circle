@@ -34,8 +34,8 @@ def noisy_circle(size, radius, noise):
 def find_circle(img):
     # Fill in this function
     model = Model()
-    # checkpoint = torch.load('model.pth.tar', map_location=lambda storage, loc: storage)
-    checkpoint = torch.load('50_epoch_v8_checkpoint.pth.tar')
+    checkpoint = torch.load('10_epoch_v8_checkpoint.pth.tar', map_location=lambda storage, loc: storage)
+    # checkpoint = torch.load('15_epoch_v8_checkpoint.pth.tar')
     model.load_state_dict(checkpoint)
     model.eval()
 
@@ -65,7 +65,7 @@ def iou(params0, params1):
 
 def main():
     results = []
-    for _ in range(100):
+    for _ in range(1000):
         params, img = noisy_circle(200, 50, 2)
         detected = find_circle(img)
         results.append(iou(params, detected))

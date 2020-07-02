@@ -82,7 +82,7 @@ def main():
         print("=> Start from the scratch ")
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    # model = nn.DataParallel(model)
+    model = nn.DataParallel(model)
     model.to(device)
 
     criterion1 = nn.MSELoss()
@@ -137,7 +137,7 @@ def train(train_loader, model, criterion1, criterion2, optimizer, epoch, args, d
             running_loss = 0.0
 
         if epoch % args.save_freq == 0:
-            torch.save(model.state_dict(),
+            torch.save(model.module.state_dict(),
                        './' + str(epoch) + '_epoch_' + args.name + '_checkpoint.pth.tar')
 
 
